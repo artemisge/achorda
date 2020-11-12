@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc459e8c-f630-4f79-9516-1eb0a5c1498a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XWCfHA6jvZme9zTkuDvkAR03xD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.itsme" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\user\Documents\Σχολή\java\Chords" />
+      <recent name="H:\user\Documents\Σχολή\java\Chords\src\com\itsme" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.itsme.Main" />
+      <module name="Chords" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Song" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Song" />
+      <module name="Chords" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Song" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc459e8c-f630-4f79-9516-1eb0a5c1498a" name="Default Changelist" comment="" />
+      <created>1581152564363</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581152564363</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="828" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581513660939">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="828" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581513660939" />
+    <state x="680" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581510991183">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="680" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581510991183" />
+    <state x="1245" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1582105068884">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1245" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582105068884" />
+    <state x="1236" y="406" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1581516013334">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1236" y="406" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1581516013334" />
+    <state x="1220" y="247" key="FileChooserDialogImpl" timestamp="1587147711370">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1220" y="247" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587147711370" />
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1584532224296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584532224296" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1584532224296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584532224296" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1584532224295">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584532224295" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1584532224296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584532224296" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1584532514244">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584532514244" />
+    <state x="222" y="126" key="new project wizard" timestamp="1588076932763">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="222" y="126" key="new project wizard/0.0.1680.1010@0.0.1680.1010" timestamp="1588076932763" />
+  </component>
+</project>

@@ -1,0 +1,7 @@
+Ionian 2 2 1 2 2 2 1
+Dorian 2 1 2 2 2 1 2
+Phrygian 1 2 2 2 1 2 2
+Lydian 2 2 2 1 2 2 1
+Mixolydian 2 2 1 2 2 1 2
+Aeolian 2 1 2 2 1 2 2
+Locrian 1 2 2 1 2 2 2

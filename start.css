@@ -6,6 +6,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  /*font-family: 'Bad Script';*/
+  font-family: 'Caveat'; 
 }
 
 html, body {  /* flexbox needs this to center the main div */
@@ -16,6 +18,7 @@ html, body {  /* flexbox needs this to center the main div */
 body {
     background-color: rgb(0,0,0);
     color: rgb(255,255,255);
+    text-shadow: 0.1em 2px #272727;
     font-size: 10px;
     margin: 0;
     display: flex;
@@ -24,8 +27,10 @@ body {
     overflow: hidden;  /* avoid scrollbars when dragging outside */
 }
 
+/* -------------------START--------------------- */
+
 #startpg {
-    background: rgb(255, 255, 255) url('purple-bg.png');;
+    background: rgb(200, 200, 200) url('purple-bg-shadow.png');;
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
@@ -38,7 +43,7 @@ body {
     display: flex;
     align-content: space-around;
     justify-content: space-around;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap; */
     position: relative;    
 }
 
@@ -51,7 +56,6 @@ body {
 
 #start, #girl, #circle {
    display: flex;
-   flex-wrap: wrap;
    overflow: hidden;
 }
 
@@ -68,6 +72,12 @@ body {
     top: 4em;
 }
 
+#girl:hover {
+    -webkit-filter: brightness(120%) contrast(1.2);
+    filter: brightness(105%) contrast(1.1);
+    transform: scale(1.05);
+}
+
 #start {
     position: absolute;
     bottom: 5em;    
@@ -78,4 +88,189 @@ body {
     -webkit-filter: brightness(120%) contrast(1.2);
     filter: brightness(120%) contrast(1.2);
     transform: scale(1.1);
-  }
+}
+
+/* -------------------MENU--------------------- */
+
+#menu {
+    background: rgb(200, 200, 200);
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 64em;
+    width: 40em;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;   
+}
+
+#arrow {
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+    margin-bottom: 2em;
+}
+
+#arrow:hover {
+    -webkit-filter: brightness(120%) contrast(1.2);
+    filter: brightness(120%) contrast(1.2);
+    transform: scale(1.1);
+}
+
+#about {
+    position: absolute;
+    top: 0em;
+    right: 1.5em;
+    color: black;
+    font-size: medium;
+    margin-bottom: 2em;
+    text-shadow: none;
+}
+
+#about:hover {
+    -webkit-filter: brightness(120%) contrast(1.2);
+    filter: brightness(120%) contrast(1.2);
+    transform: scale(1.1);
+}
+
+.menubox {
+
+    padding: 3em;
+    border-radius: 10px;
+    width: 87%;
+    height: 27%;
+    top: 2em;;
+}
+
+.menubox:hover {
+    -webkit-filter: brightness(120%) contrast(1.2);
+    filter: brightness(120%) contrast(1.2);
+    transform: scale(1.1);
+}
+
+.menubox p{
+    font-size: medium;
+}
+
+#songlistmenu {
+    background-color: #482351;
+    text-align: left;
+    border-left: 1em solid #c5acd6;
+    margin-bottom: 2em;
+    margin-top: 5em;
+}
+
+#progressionmenu {
+    background-color: rgb(28, 88, 112);
+    text-align: right;
+    border-right: 1em solid #c5acd6;
+    margin-bottom: 2em;
+}
+
+#scalesmenu {
+    background-color: rgb(151, 81, 0);
+    text-align: left;
+    border-left: 1em solid #c5acd6;
+    margin-bottom: 4em;
+}
+
+/* ---------------SCALES OPTION--------------- */
+
+#scales {
+    background: rgb(200, 200, 200);
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 64em;
+    width: 40em;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+
+    flex-flow: column wrap;
+}
+
+#scales > div {
+    background-color: rgba(61, 30, 17, 0.6);
+    width: 87%;
+    justify-content: space-around;
+    align-self: center;
+}
+#scales >#scalemod {
+    width: 80%;
+}
+
+#scalemod {
+    display: flex;
+    flex-flow: row nowrap;
+    
+}
+
+#scalemod > div {
+    border: 1px solid blue;
+}
+#scalemod > div > p {
+    text-align: left;
+    font-size: 2.6em;
+    margin: 0;
+}
+
+#pickyourscale {
+    margin-top: 3em;
+    text-align: left;
+    padding: 0em 2em;
+    border-left: 1em solid rgb(206, 110, 0);
+    border-radius: 10px;
+}
+
+#pick-scale {
+    font-size: 3.5em;
+}
+
+#scaledisplay {
+    font-size: 5em;
+}
+
+#chords3 {
+    text-align: left;
+    padding: 1.5em 0em;
+    border-left: 1em solid rgb(206, 110, 0);
+    border-radius: 10px;
+    
+}
+
+#chords3 > p {
+    margin: 0em 1em;
+}
+
+#related-chords {
+    font-size: 3.5em;
+}
+
+
+#chordsdisplay {
+    display: grid;
+    grid-gap: 0em;
+    padding: 0.5em 0.5em;
+    grid-template-columns:  4em repeat(7, 2em);
+    grid-template-rows: repeat(4, 2em);
+    font-size: 1.7em;
+    flex-direction: row;
+    flex-flow: row ;
+}
+
+#chordsdisplay .name {
+   
+}

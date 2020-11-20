@@ -122,12 +122,15 @@ body {
     transform: scale(1.1);
 }
 
+
 #about {
+    margin-top: 0.5em;
+    margin-right: 1em;
     position: absolute;
-    top: 0em;
-    right: 1.5em;
+    top: 0;
+    right: 0;
     color: black;
-    font-size: medium;
+    font-size: 2em;
     margin-bottom: 2em;
     text-shadow: none;
 }
@@ -136,6 +139,11 @@ body {
     -webkit-filter: brightness(120%) contrast(1.2);
     filter: brightness(120%) contrast(1.2);
     transform: scale(1.1);
+}
+
+.menubox p {
+    margin: 0em;
+    font-size: 3em;
 }
 
 .menubox {
@@ -154,7 +162,12 @@ body {
 }
 
 .menubox p{
-    font-size: medium;
+    font-size: 2em;
+    margin: 0;
+}
+
+#menu-title {
+    font-size: 2em;
 }
 
 #songlistmenu {
@@ -193,7 +206,7 @@ body {
     overflow: hidden;
     display: flex;
     align-content: space-around;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     position: relative;
     color: rgb(255, 255, 255);
@@ -215,16 +228,73 @@ body {
 #scalemod {
     display: flex;
     flex-flow: row nowrap;
-    
+    border-radius: 0px 15px;
 }
 
-#scalemod > div {
-    border: 1px solid blue;
-}
 #scalemod > div > p {
     text-align: left;
     font-size: 2.6em;
     margin: 0;
+}
+
+.select-box .options-container {
+    font-size: 2em;
+    /* color of the dropdown here */
+    background: #272727;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px 6px 6px 8px;
+    overflow: hidden;
+}
+
+.selected {
+    font-size: 2em;
+    background: #272727;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 0.2em;
+}
+
+.select-box .options-container.active {
+    max-height: 5em;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+/* FOR MOST BROWSERS */
+.select-box .options-container::-webkit-scrollbar {
+    width: 0.5em;
+    background: #0d141f;
+    border-radius: 0 10px 10px 0;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb {
+    background: #525861;
+    border-radius: 8px;
+}
+
+/* FOR FIREFOX */
+.select-box .options-container {
+    scrollbar-color: rgb(104, 104, 104) rgb(31, 31, 31);
+    scrollbar-width: thin;
+}
+
+.select-box .option, .selected {
+    cursor: pointer;
+}
+
+.select-box .option:hover {
+    cursor: pointer;
+    background: #414b57;
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .option .radio {
+    display: none;
 }
 
 #pickyourscale {
@@ -271,6 +341,3 @@ body {
     flex-flow: row ;
 }
 
-#chordsdisplay .name {
-   
-}

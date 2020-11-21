@@ -237,7 +237,8 @@ body {
     margin: 0;
 }
 
-.select-box .options-container {
+/* ---------------KEY DROPDOWN --------------*/
+.key-select-box .key-options-container {
     font-size: 2em;
     /* color of the dropdown here */
     background: #272727;
@@ -248,54 +249,247 @@ body {
     overflow: hidden;
 }
 
-.selected {
+.key-selected {
+    width: 2.5em;
     font-size: 2em;
+    text-align: center;
+    padding-right: 0.6em;
     background: #272727;
     border-radius: 8px;
     position: relative;
     margin-bottom: 0.2em;
 }
 
-.select-box .options-container.active {
+.key-selected::after {
+    content: "";
+    background: url("downarrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    height: 100%;
+    width: 0.5em;
+    top: 0.5em;
+    right: 0.2em;
+    transition: all 0.4s;
+}
+
+.key-select-box .key-options-container.active {
     max-height: 5em;
     opacity: 1;
     overflow-y: scroll;
+    margin-bottom: 0.5em;
+}
+
+.key-elect-box .key-options-container.active + .key-selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
 }
 
 /* FOR MOST BROWSERS */
-.select-box .options-container::-webkit-scrollbar {
+.key-select-box .key-options-container::-webkit-scrollbar {
     width: 0.5em;
     background: #0d141f;
     border-radius: 0 10px 10px 0;
 }
 
-.select-box .options-container::-webkit-scrollbar-thumb {
+.key-select-box .key-options-container::-webkit-scrollbar-thumb {
     background: #525861;
     border-radius: 8px;
 }
 
 /* FOR FIREFOX */
-.select-box .options-container {
+.key-select-box .key-options-container {
     scrollbar-color: rgb(104, 104, 104) rgb(31, 31, 31);
     scrollbar-width: thin;
 }
 
-.select-box .option, .selected {
+.key-select-box .key-option, .key-selected {
     cursor: pointer;
 }
 
-.select-box .option:hover {
+.key-select-box .key-option:hover {
     cursor: pointer;
     background: #414b57;
 }
 
-.select-box label {
+.key-select-box label {
     cursor: pointer;
 }
 
-.select-box .option .radio {
+.key-select-box .key-option .radio {
     display: none;
 }
+
+/* ---------------SCALE TYPE DROPDOWN --------------*/
+.scale-select-box .scale-options-container {
+    font-size: 2em;
+    /* color of the dropdown here */
+    background: #272727;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px 6px 6px 8px;
+    overflow: hidden;
+}
+
+.scale-selected {
+    width: 8em;
+    font-size: 2em;
+    text-align: center;
+    padding-right: 0.6em;
+    background: #272727;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 0.2em;
+}
+
+.scale-selected::after {
+    content: "";
+    background: url("downarrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    height: 100%;
+    width: 0.5em;
+    top: 0.5em;
+    right: 0.2em;
+    transition: all 0.4s;
+}
+
+.scale-select-box .scale-options-container.active {
+    max-height: 5em;
+    opacity: 1;
+    overflow-y: scroll;
+    margin-bottom: 0.5em;
+}
+
+.scale-select-box .scale-options-container.active + .scale-selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+}
+
+/* FOR MOST BROWSERS */
+.scale-select-box .scale-options-container::-webkit-scrollbar {
+    width: 0.5em;
+    background: #0d141f;
+    border-radius: 0 10px 10px 0;
+}
+
+.scale-select-box .scale-options-container::-webkit-scrollbar-thumb {
+    background: #525861;
+    border-radius: 8px;
+}
+
+/* FOR FIREFOX */
+.scale-select-box .scale-options-container {
+    scrollbar-color: rgb(104, 104, 104) rgb(31, 31, 31);
+    scrollbar-width: thin;
+}
+
+.scale-select-box .scale-option, .scale-selected {
+    cursor: pointer;
+}
+
+.scale-select-box .scale-option:hover {
+    cursor: pointer;
+    background: #414b57;
+}
+
+.scale-select-box label {
+    cursor: pointer;
+}
+
+.scale-select-box .scale-option .radio {
+    display: none;
+}
+
+
+/* ---------------MODE DROPDOWN --------------*/
+.mode-select-box .mode-options-container {
+    font-size: 2em;
+    /* color of the dropdown here */
+    background: #272727;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px 6px 6px 8px;
+    overflow: hidden;
+}
+
+.mode-selected {
+    width: 4em;
+    font-size: 2em;
+    text-align: center;
+    padding-right: 0.6em;
+    background: #272727;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 0.2em;
+}
+
+.mode-selected::after {
+    content: "";
+    background: url("downarrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    height: 100%;
+    width: 0.5em;
+    top: 0.5em;
+    right: 0.2em;
+    transition: all 0.4s;
+}
+
+.mode-select-box .mode-options-container.active {
+    max-height: 5em;
+    opacity: 1;
+    overflow-y: scroll;
+    margin-bottom: 0.5em;
+}
+
+.mode-select-box .mode-options-container.active + .mode-selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+}
+
+/* FOR MOST BROWSERS */
+.mode-select-box .mode-options-container::-webkit-scrollbar {
+    width: 0.5em;
+    background: #0d141f;
+    border-radius: 0 10px 10px 0;
+}
+
+.mode-select-box .mode-options-container::-webkit-scrollbar-thumb {
+    background: #525861;
+    border-radius: 8px;
+}
+
+/* FOR FIREFOX */
+.mode-select-box .mode-options-container {
+    scrollbar-color: rgb(104, 104, 104) rgb(31, 31, 31);
+    scrollbar-width: thin;
+}
+
+.mode-select-box .mode-option, .mode-selected {
+    cursor: pointer;
+}
+
+.mode-select-box .mode-option:hover {
+    cursor: pointer;
+    background: #414b57;
+}
+
+.mode-select-box label {
+    cursor: pointer;
+}
+
+.mode-select-box .mode-option .radio {
+    display: none;
+}
+ /* ----------PICK YOUR SCALE --------------*/
 
 #pickyourscale {
     margin-top: 3em;

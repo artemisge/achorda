@@ -91,6 +91,10 @@ modeOptionsList.forEach( o => {
 
 // ------------UPDATE SCALE----------
 
+var scale;  // array of all notes in the scale build
+var chords; // array of Strings with chords like ["C", "Dm"...]
+var seventh; // array of strings with seventh chord notation like ["maj7", "7"...]
+
 //check if there is overflow in scale
 function isOverflown(element) {
     return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
@@ -142,8 +146,8 @@ function buildScale(key, scaletype, mode) {
             break;
     } 
     steps = steps.map(Number);
+    scale = [];
 
-    var scale = []; // array of all notes in the scale build
     let index = notes.indexOf(key); // index in array "notes" 
     scale[0] = key; // initialize scale with first note.
     
@@ -197,11 +201,57 @@ function updateChords() {
 
 }
 
+// builds an array of all triads and another array of seventh chord notation
 function buildChords() {
     // DIATONIC
+
+    // create as many triads as the notes
+    chords = []; // array of strings like ["C", "Em"...]
+    var wholeChord = []; // array with 1st, 3rd, 5th and 7th of a scale ['C', 'D'...]
+    seventh = [];
+    for (let i = 0; i < scale.length; i++) {
+        wholeChord = [scale[i], scale[(i+2)%scale.length], scale[(i+4)%scale.length], scale[(i+6)%scale.length]];
+        console.log("chord " + i + " " + wholeChord);
+        evaluatedChord(wholeChord, i);
+    }
     
 
     // DOMINANT
 
     //PARALLEL
+}
+
+function evaluatedChord(chord, i) {
+    // calculates steps between chord notes eg C-E => 4, E-G => 3
+    let first = (notes.indexOf(chord[1])>notes.indexOf(chord[0])) ? 
+                    notes.indexOf(chord[1])-notes.indexOf(chord[0]) 
+                    : (12 - Math.abs(notes.indexOf(chord[1])-notes.indexOf(chord[0])))%12;
+    let second = (notes.indexOf(chord[2])>notes.indexOf(chord[1])) ? 
+                    notes.indexOf(chord[2])-notes.indexOf(chord[1]) 
+                    : (12 - Math.abs(notes.indexOf(chord[2])-notes.indexOf(chord[1])))%12;
+    let third = (notes.indexOf(chord[3])>notes.indexOf(chord[2])) ? 
+                    notes.indexOf(chord[3])-notes.indexOf(chord[2]) 
+                    : (12 - Math.abs(notes.indexOf(chord[3])-notes.indexOf(chord[2])))%12;
+    console.log(first + " " + second + " " + third);
+
+    if (first == 4) {
+        if (second == 3) {
+            chord = chord[0] + ""; //MAJOR
+            if (third == 4) seventh[i] = "maj7"; //MAJOR 7
+            else seventh[i] = "7"; //DOMINANT 7
+        }
+        else chord = chord[0] + "aug"; //AUGMENTED
+    } else { //==3
+        if (second == 3) chord = chord[0] + "dim"; //DIMINISHED
+        else {
+            chord = chord[0] + "m"; //MINOR
+            if (third == 3) seventh[i] = "min7"; //MINOR 7
+        }
+    }
+    console.log(chord);
+}
+
+function about() {
+    console.log("ftiagmeno apo thn aph tou daffy");
+    buildChords();
 }

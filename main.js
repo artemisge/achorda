@@ -192,3 +192,16 @@ function buildScale(key, scaletype, mode) {
 
     return cyclicRotation(scale, position).join(" ");
 } 
+
+function updateChords() {
+
+}
+
+function buildChords() {
+    // DIATONIC
+    
+
+    // DOMINANT
+
+    //PARALLEL
+}

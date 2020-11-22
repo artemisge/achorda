@@ -218,7 +218,7 @@ body {
 
 #scales > div {
     background-color: rgba(61, 30, 17, 0.6);
-    width: 87%;
+    width: 97%;
     justify-content: space-around;
     align-self: center;
 }
@@ -506,7 +506,7 @@ body {
 }
 
 #scaledisplay {
-    font-size: 4em;
+    font-size: 4.2em;
     text-align: center;
 }
 
@@ -549,10 +549,9 @@ body {
     display: grid;
     grid-gap: 0em;
     padding: 0.5em 0.5em;
-    grid-template-columns:  4em repeat(7, 2em);
+    grid-template-columns:  4em repeat(7, auto);
     grid-template-rows: repeat(4, 2em);
     font-size: 1.7em;
     flex-direction: row;
     flex-flow: row ;
 }
-

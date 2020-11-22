@@ -117,7 +117,6 @@ function cyclicRotation(array, position) {
         for (var i = 0; i < array.length; i++) {
             array2[i] = array[(i+position) % array.length];
         }
-        console.log("array2:"+array2);
     return array2;
 }
 
@@ -143,7 +142,6 @@ function buildScale(key, scaletype, mode) {
             break;
     } 
     steps = steps.map(Number);
-    console.log(steps);
 
     var scale = []; // array of all notes in the scale build
     let index = notes.indexOf(key); // index in array "notes" 

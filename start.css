@@ -501,10 +501,12 @@ body {
 
 #pick-scale {
     font-size: 3.5em;
+    margin-bottom: 0.7em;
 }
 
 #scaledisplay {
-    font-size: 5em;
+    font-size: 4em;
+    text-align: center;
 }
 
 #chords3 {

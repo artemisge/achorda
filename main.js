@@ -242,13 +242,17 @@ function evaluatedChord(chord, i) {
         }
         else chord = chord[0] + "aug"; //AUGMENTED
     } else { //==3
-        if (second == 3) chord = chord[0] + "dim"; //DIMINISHED
-        else {
+        if (second == 3) {
+            chord = chord[0] + "dim"; //DIMINISHED
+            if (third == 4) seventh[i] = "hdim7"; //HALF-DIMINISHED 7
+            else seventh[i] = "fdim7"; //FULLY-DIMINISHED 7
+        } else {
             chord = chord[0] + "m"; //MINOR
             if (third == 3) seventh[i] = "min7"; //MINOR 7
         }
     }
     console.log(chord);
+    console.log(seventh[i]);
 }
 
 function about() {

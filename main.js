@@ -262,7 +262,11 @@ function evaluatedChord(chord, i) {
             else seventh[i] = "fdim7"; //FULLY-DIMINISHED 7
         } else {
             chord = chord[0] + "m"; //MINOR
-            if (third == 3) seventh[i] = "min7"; //MINOR 7
+            if (third == 3) {
+                seventh[i] = "min7"; //MINOR 7
+            } else {
+                seventh[i] = "maj7"; //MAJOR 7
+            }
         }
     }
     return chord;

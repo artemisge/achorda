@@ -4,8 +4,8 @@ const major = "2 2 1 2 2 2 1";
 const melodicMinor = "2 1 2 2 2 2 1";
 // TODO update the steps in the scales below
 const harmonicMinor = "2 1 2 2 1 3 1";
-const harmonicMajor = "2 2 1 2 2 2 1";
-const doubleHarmonicMajor = "2 2 1 2 2 2 1";
+const harmonicMajor = "2 2 1 2 1 3 1";
+const doubleHarmonicMajor = "1 3 1 2 1 3 1";
 
 // GO TO *__* FUNCTIONS
 
@@ -45,6 +45,7 @@ keyOptionsList.forEach( o => {
                     document.getElementsByClassName("scale-selected")[0].innerText,
                     document.getElementsByClassName("mode-selected")[0].innerText);
         updateChords();
+        hideElement();
     })
 })
 
@@ -67,6 +68,7 @@ scaleOptionsList.forEach( o => {
                     document.getElementsByClassName("scale-selected")[0].innerText,
                     document.getElementsByClassName("mode-selected")[0].innerText);
         updateChords();
+        hideElement();
     })
 })
 
@@ -95,7 +97,7 @@ modeOptionsList.forEach( o => {
 
 var scale;  // array of all notes in the scale build
 var chords = []; // array of Strings with chords like ["C", "Dm"...]
-var seventh; // array of strings with seventh chord notation like ["maj7", "7"...]
+var seventh = []; // array of strings with seventh chord notation like ["maj7", "7"...]
 
 //check if there is overflow in scale
 function isOverflown(element) {
@@ -201,9 +203,13 @@ function buildScale(key, scaletype, mode) {
 function updateChords() {
     buildChords();
     console.log(chords);
-    for (let i = 1; i < document.getElementsByClassName("Diatonic").length; i++) {
-        document.getElementsByClassName("Diatonic")[i].innerHTML = chords[i-1];
-        //document.getElementsByClassName("sev1")[i-1].innerText = seventh[i-1];
+    console.log(seventh);
+    sev1 = document.getElementsByClassName("sev1");
+    console.log(sev1);
+    console.log(sev1.length);
+        for (let i = 1; i < document.getElementsByClassName("Diatonic").length; i++) {
+        document.getElementsByClassName("Diatonic")[i].innerHTML = chords[i-1] 
+        + '<sup class="sev1"> ' + seventh[i-1] + "</sup";
     }
 }
 
@@ -224,7 +230,11 @@ function buildChords() {
     // DOMINANT
 
     //PARALLEL
+
+    //NEGATIVE
+
 }
+//TODO eg A A# => no same notes
 
 function evaluatedChord(chord, i) {
     // calculates steps between chord notes eg C-E => 4, E-G => 3
@@ -266,7 +276,7 @@ function hideElement() {
         let x = document.getElementsByClassName("sev1")[i];
         console.log(x);
         if (document.getElementById("add7").checked == true) {
-            x.style.display = "block";
+            x.style.display = "inline-block";
         } else {
             x.style.display = "none";
         }
@@ -277,5 +287,5 @@ function hideElement() {
 
 
 function about() {
-    console.log("ftiagmeno apo thn aph tou daffy");
+    console.log("yooo");
 }

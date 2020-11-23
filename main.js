@@ -41,9 +41,10 @@ keyOptionsList.forEach( o => {
         keySelected.innerHTML = o.querySelector("label").innerHTML;
         keyOptionsContainer.classList.remove("active");
         updateScale(
-            document.getElementsByClassName("key-selected")[0].innerText,
-            document.getElementsByClassName("scale-selected")[0].innerText,
-            document.getElementsByClassName("mode-selected")[0].innerText);
+                    document.getElementsByClassName("key-selected")[0].innerText,
+                    document.getElementsByClassName("scale-selected")[0].innerText,
+                    document.getElementsByClassName("mode-selected")[0].innerText);
+        updateChords();
     })
 })
 
@@ -62,9 +63,10 @@ scaleOptionsList.forEach( o => {
         scaleSelected.innerHTML = o.querySelector("label").innerHTML;
         scaleOptionsContainer.classList.remove("active");
         updateScale(
-            document.getElementsByClassName("key-selected")[0].innerText,
-            document.getElementsByClassName("scale-selected")[0].innerText,
-            document.getElementsByClassName("mode-selected")[0].innerText);
+                    document.getElementsByClassName("key-selected")[0].innerText,
+                    document.getElementsByClassName("scale-selected")[0].innerText,
+                    document.getElementsByClassName("mode-selected")[0].innerText);
+        updateChords();
     })
 })
 
@@ -92,13 +94,13 @@ modeOptionsList.forEach( o => {
 // ------------UPDATE SCALE----------
 
 var scale;  // array of all notes in the scale build
-var chords; // array of Strings with chords like ["C", "Dm"...]
+var chords = []; // array of Strings with chords like ["C", "Dm"...]
 var seventh; // array of strings with seventh chord notation like ["maj7", "7"...]
 
 //check if there is overflow in scale
 function isOverflown(element) {
     return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-  }
+}
 
 function stringToArray(str) {
     let arrayScale = str.split(" ");
@@ -112,7 +114,6 @@ function arrayToString(array) {
 
 function updateScale(key, scaletype, mode) {
     var strscale = buildScale(key, scaletype, mode);
-    
     document.getElementById("scaledisplay").innerHTML = strscale;
 }
 
@@ -198,7 +199,12 @@ function buildScale(key, scaletype, mode) {
 } 
 
 function updateChords() {
-
+    buildChords();
+    console.log(chords);
+    for (let i = 1; i < document.getElementsByClassName("Diatonic").length; i++) {
+        document.getElementsByClassName("Diatonic")[i].innerHTML = chords[i-1];
+        //document.getElementsByClassName("sev1")[i-1].innerText = seventh[i-1];
+    }
 }
 
 // builds an array of all triads and another array of seventh chord notation
@@ -211,8 +217,7 @@ function buildChords() {
     seventh = [];
     for (let i = 0; i < scale.length; i++) {
         wholeChord = [scale[i], scale[(i+2)%scale.length], scale[(i+4)%scale.length], scale[(i+6)%scale.length]];
-        console.log("chord " + i + " " + wholeChord);
-        evaluatedChord(wholeChord, i);
+        chords[i] = evaluatedChord(wholeChord, i);
     }
     
 
@@ -232,7 +237,6 @@ function evaluatedChord(chord, i) {
     let third = (notes.indexOf(chord[3])>notes.indexOf(chord[2])) ? 
                     notes.indexOf(chord[3])-notes.indexOf(chord[2]) 
                     : (12 - Math.abs(notes.indexOf(chord[3])-notes.indexOf(chord[2])))%12;
-    console.log(first + " " + second + " " + third);
 
     if (first == 4) {
         if (second == 3) {
@@ -251,11 +255,27 @@ function evaluatedChord(chord, i) {
             if (third == 3) seventh[i] = "min7"; //MINOR 7
         }
     }
+    return chord;
     console.log(chord);
-    console.log(seventh[i]);
+    //console.log(seventh[i]);
 }
+
+function hideElement() {
+    
+    for (let i = 0; i < document.getElementsByClassName("sev1").length; i++) {
+        let x = document.getElementsByClassName("sev1")[i];
+        console.log(x);
+        if (document.getElementById("add7").checked == true) {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    
+}
+
+
 
 function about() {
     console.log("ftiagmeno apo thn aph tou daffy");
-    buildChords();
 }

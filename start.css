@@ -555,3 +555,8 @@ body {
     flex-direction: row;
     flex-flow: row ;
 }
+
+sup.sev1 {
+    font-size: x-small;
+    display: none;
+}

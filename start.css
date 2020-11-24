@@ -563,6 +563,11 @@ body {
 }
 
 sup.sev1 {
-    font-size: x-small;
+    font-size: small;
+    display: none;
+}
+
+sup.sev2 {
+    font-size: small;
     display: none;
 }

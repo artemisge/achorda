@@ -98,6 +98,9 @@ modeOptionsList.forEach( o => {
 var scale;  // array of all notes in the scale build
 var chords = []; // array of Strings with chords like ["C", "Dm"...]
 var seventh = []; // array of strings with seventh chord notation like ["maj7", "7"...]
+var domchords = []; //only in major/h. minor
+var parchords = []; //only in major/h. minor
+var negchords = []; //only in major/h. minor
 
 //check if there is overflow in scale
 function isOverflown(element) {
@@ -115,7 +118,9 @@ function arrayToString(array) {
 }
 
 function updateScale(key, scaletype, mode) {
-    var strscale = buildScale(key, scaletype, mode);
+    let tempscales = buildScale(key, scaletype, mode);
+    var strscale = tempscales[0].join(" "); // scale that has been rotated, will be displayed
+    scale = tempscales[1]; //original scale
     document.getElementById("scaledisplay").innerHTML = strscale;
 }
 
@@ -127,8 +132,7 @@ function cyclicRotation(array, position) {
     return array2;
 }
 
-// returns a string array aof all notes of the scale that builds
-// TODO make mode option work
+// returns an array of all notes of the scale that builds in the mode choses and one pure
 function buildScale(key, scaletype, mode) {
     var steps; // array of steps to build scale
     switch(scaletype) {
@@ -149,7 +153,7 @@ function buildScale(key, scaletype, mode) {
             break;
     } 
     steps = steps.map(Number);
-    scale = [];
+    let scale = [];
 
     let index = notes.indexOf(key); // index in array "notes" 
     scale[0] = key; // initialize scale with first note.
@@ -197,19 +201,19 @@ function buildScale(key, scaletype, mode) {
             break;
     }
 
-    return cyclicRotation(scale, position).join(" ");
+    return [cyclicRotation(scale, position), scale];
 } 
 
 function updateChords() {
     buildChords();
-    console.log(chords);
-    console.log(seventh);
     sev1 = document.getElementsByClassName("sev1");
-    console.log(sev1);
-    console.log(sev1.length);
-        for (let i = 1; i < document.getElementsByClassName("Diatonic").length; i++) {
+    for (let i = 1; i < document.getElementsByClassName("Diatonic").length; i++) {
         document.getElementsByClassName("Diatonic")[i].innerHTML = chords[i-1] 
         + '<sup class="sev1"> ' + seventh[i-1] + "</sup";
+    }
+    for (let i = 1; i < document.getElementsByClassName("Dominant").length; i++) {
+        document.getElementsByClassName("Dominant")[i].innerHTML = domchords[i-1] ;
+        //+ '<sup class="sev1"> ' + seventh[i-1] + "</sup";
     }
 }
 
@@ -226,8 +230,15 @@ function buildChords() {
         chords[i] = evaluatedChord(wholeChord, i);
     }
     
-
     // DOMINANT
+    domchords = [];
+    // 1st and 7th chords dominant wont be calculated
+    for (let i = 1; i < scale.length-1; i++) {
+        domchords[i] = notes[(notes.indexOf(scale[i]) + 7) % 12]; 
+        // in major minor always a perfect fifth from the current note
+    }
+    domchords[0] = "-";
+    domchords[scale.length-1] = "-";
 
     //PARALLEL
 
@@ -236,48 +247,97 @@ function buildChords() {
 }
 //TODO eg A A# => no same notes
 
-function evaluatedChord(chord, i) {
-    // calculates steps between chord notes eg C-E => 4, E-G => 3
-    let first = (notes.indexOf(chord[1])>notes.indexOf(chord[0])) ? 
-                    notes.indexOf(chord[1])-notes.indexOf(chord[0]) 
-                    : (12 - Math.abs(notes.indexOf(chord[1])-notes.indexOf(chord[0])))%12;
-    let second = (notes.indexOf(chord[2])>notes.indexOf(chord[1])) ? 
-                    notes.indexOf(chord[2])-notes.indexOf(chord[1]) 
-                    : (12 - Math.abs(notes.indexOf(chord[2])-notes.indexOf(chord[1])))%12;
-    let third = (notes.indexOf(chord[3])>notes.indexOf(chord[2])) ? 
-                    notes.indexOf(chord[3])-notes.indexOf(chord[2]) 
-                    : (12 - Math.abs(notes.indexOf(chord[3])-notes.indexOf(chord[2])))%12;
+function evaluatedChord(wholechord, i) {
+    // calculates steps between chord notes and root eg C-E => 4, C-G => 7
+    let third = (notes.indexOf(wholechord[1])>notes.indexOf(wholechord[0])) ? 
+                    notes.indexOf(wholechord[1])-notes.indexOf(wholechord[0]) 
+                    : (12 - Math.abs(notes.indexOf(wholechord[1])-notes.indexOf(wholechord[0])))%12;
+    let fifth = (notes.indexOf(wholechord[2])>notes.indexOf(wholechord[0])) ? 
+                    notes.indexOf(wholechord[2])-notes.indexOf(wholechord[0]) 
+                    : (12 - Math.abs(notes.indexOf(wholechord[2])-notes.indexOf(wholechord[0])))%12;
+    let seven = (notes.indexOf(wholechord[3])>notes.indexOf(wholechord[0])) ? 
+                    notes.indexOf(wholechord[3])-notes.indexOf(wholechord[0]) 
+                    : (12 - Math.abs(notes.indexOf(wholechord[3])-notes.indexOf(wholechord[0])))%12;
 
-    if (first == 4) {
+    console.log("third" + third + "fifth" +fifth + "seven" +seven);
+    // ----THIRDS----
+    if (third == 4) { //MAJOR third
+        chord = wholechord[0];
+    } else if (third == 3) { //MINOR third
+        chord = wholechord[0] + "m";
+    } else if (third == 2) { //FLAT third
+        chord = wholechord[0] + "b3";
+    } else if (third == 5) { //SHARP third
+        chord = wholechord[0] + "#3";
+    }
+
+    // ----FIFTHS----
+    // if perfect fifth don't do anything
+    if (fifth == 8) { //SHARP fifth
+        //AUGMENTED
+        if (third == 4) chord = wholechord[0] + "aug";
+        //UNLABELED chords
+        else chord += "#5";
+    } else if (fifth == 6) { //FLAT fifth
+        //DIMINISHED
+        if (third == 3) chord = wholechord[0] + "dim";
+        //UNLABELED chords
+        else chord += "b5";
+    }
+    
+    // ----SEVENTHS----
+    if (seven == 11) { //MAJOR seventh
+        seventh[i] = "M7";
+    } else if (seven == 10) { //MINOR seventh
+        seventh[i] = "m7";
+    } else if (seven == 9) { //FLAT seventh
+        seventh[i] = "b7";
+    }
+
+    /*if (first == 4) {
         if (second == 3) {
             chord = chord[0] + ""; //MAJOR
             if (third == 4) seventh[i] = "maj7"; //MAJOR 7
             else seventh[i] = "7"; //DOMINANT 7
+        } else if (second == 4) {
+            chord = chord[0] + "aug"; //AUGMENTED
+            if (third == 3) seventh[i] = "maj7"; //MAJOR 7
+        } else if (second == 2) {
+            chord = chord[0] + "b5"; //major flat 5
         }
-        else chord = chord[0] + "aug"; //AUGMENTED
     } else { //==3
         if (second == 3) {
             chord = chord[0] + "dim"; //DIMINISHED
-            if (third == 4) seventh[i] = "hdim7"; //HALF-DIMINISHED 7
-            else seventh[i] = "fdim7"; //FULLY-DIMINISHED 7
+            if (third == 4) seventh[i] = "ø7"; //HALF-DIMINISHED 7
+            else seventh[i] = "o7"; //FULLY-DIMINISHED 7
         } else {
             chord = chord[0] + "m"; //MINOR
             if (third == 3) {
-                seventh[i] = "min7"; //MINOR 7
+                seventh[i] = "7"; //MINOR 7
             } else {
                 seventh[i] = "maj7"; //MAJOR 7
             }
         }
-    }
+    } */
     return chord;
     console.log(chord);
     //console.log(seventh[i]);
 }
 
 function hideElement() {
-    
+    // DIATONIC
     for (let i = 0; i < document.getElementsByClassName("sev1").length; i++) {
         let x = document.getElementsByClassName("sev1")[i];
+        console.log(x);
+        if (document.getElementById("add7").checked == true) {
+            x.style.display = "inline-block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    // DOMINANT
+    for (let i = 0; i < document.getElementsByClassName("sev2").length; i++) {
+        let x = document.getElementsByClassName("sev2")[i];
         console.log(x);
         if (document.getElementById("add7").checked == true) {
             x.style.display = "inline-block";

@@ -516,12 +516,13 @@ body {
     text-align: center;
 }
 
-#chords3 {
+#scales > #chords3 {
+    width: 100%;
     position: relative;
     text-align: left;
     padding: 1.5em 0em;
-    border-left: 1em solid rgb(206, 110, 0);
-    border-radius: 10px;
+    /*border-left: 1em solid rgb(206, 110, 0);
+    border-radius: 10px;*/
 }
 
 #chords3 > p {

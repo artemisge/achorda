@@ -255,23 +255,31 @@ function buildChords() {
     domseventh[scale.length-1] = "";
 
     //PARALLEL
-    parchords = []; // array of strings like ["C", "Em"...]
-    wholeChord = []; // array with 1st, 3rd, 5th and 7th of a scale ['C', 'D'...]
-    parseventh = [];
-    let tmpscaletype;
-    if (scaletype == "Major") tmpscaletype = "Harmonic Minor";
-    if (scaletype == "Harmonic Minor" | scaletype == "Melodic Minor") tmpscaletype = "Major";
-    //if (scaletype == "Major Pentatonic") tmpscaletype = "Minor Pentatonic";
-    //if (scaletype == "Major") tmpscaletype = "Minor";
-    let parscale = buildScale(scale[0], tmpscaletype, 0)[1];
-    for (let i = 0; i < parscale.length; i++) {
-        wholeChord = [parscale[i], parscale[(i+2)%parscale.length], parscale[(i+4)%parscale.length], parscale[(i+6)%parscale.length]];
-        values = evaluatedChord(wholeChord);
-        parchords[i] = values[0];
-        parseventh[i] = values[1];
+    if (scaletype == "Major" | scaletype == "Harmonic Minor" | scaletype == "Melodic Minor") {
+        parchords = []; // array of strings like ["C", "Em"...]
+        wholeChord = []; // array with 1st, 3rd, 5th and 7th of a scale ['C', 'D'...]
+        parseventh = [];
+        let tmpscaletype;
+        if (scaletype == "Major") tmpscaletype = "Harmonic Minor";
+        if (scaletype == "Harmonic Minor" | scaletype == "Melodic Minor") tmpscaletype = "Major";
+        //if (scaletype == "Major Pentatonic") tmpscaletype = "Minor Pentatonic";
+        //if (scaletype == "Major") tmpscaletype = "Minor";
+        let parscale = buildScale(scale[0], tmpscaletype, 0)[1];
+        for (let i = 0; i < parscale.length; i++) {
+            wholeChord = [parscale[i], parscale[(i+2)%parscale.length], parscale[(i+4)%parscale.length], parscale[(i+6)%parscale.length]];
+            values = evaluatedChord(wholeChord);
+            parchords[i] = values[0];
+            parseventh[i] = values[1];
+        }
+    } else {
+        parscale = ["-", "-", "-", "-", "-", "-", "-"];
+        parchords = ["", "", "", "", "", "", ""];
+        parseventh = ["", "", "", "", "", "", ""];
     }
+    
 
     //NEGATIVE
+
 }
 //TODO eg A A# => no same notes
 

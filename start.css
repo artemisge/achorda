@@ -523,6 +523,7 @@ body {
     padding: 1.5em 0em;
     /*border-left: 1em solid rgb(206, 110, 0);
     border-radius: 10px;*/
+    border-top: 0.5em solid rgb(206, 110, 0);
 }
 
 #chords3 > p {

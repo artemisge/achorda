@@ -366,6 +366,18 @@ function hideElement() {
 }
 
 
+//-------------------------------------------------------------------------
+//-----------------------------PROGRESSIONS--------------------------------
+//-------------------------------------------------------------------------
+function progressions() {
+    console.log("clicked");
+    location.href="progressions.html";
+}
+
+
+
+
+
 
 function about() {
     console.log("yooo");

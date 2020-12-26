@@ -13,19 +13,64 @@
 </head>
 <body>
     <div id = "scales">
-        <img src="backarrow.svg" id="arrow" onclick="loadmenu()"/> 
-        <p id="about" onclick="about()"> About </p>
-
-        <div id="pickyourscale">
-            <div id="pick-scale">Pick your scale:</div>
-            <div id="scaledisplay"> C D E F G A B </div>
+        <div class="topheader" id="scales-topheader">
+            <img src="backarrow.svg" id="arrow" onclick="loadmenu()"/> 
+            <p id="title">Scales & Chords</p>
+            <p id="about" onclick="about()"> About </p>
         </div>
+
+        <div id="scaledisplay"> C D E F G A B </div>
         
+        
+        
+        <div id="chords3">
+            <p><span id="related-chords"> Related chords:</span> </p><br/>
+            <input type="checkbox" id="add7" name="add7" value="add7" onclick="hideElement()">
+            <label id="add7label" for="add7"> Add 7th</label>
+            <div id="chordsdisplay">
+                <div class="Diatonic name">Diatonic</div>
+                <div class="Diatonic item1">C<sup class="sev1">  M7</sup></div>
+                <div class="Diatonic item2">Dm<sup class="sev1"> m7</sup></div>
+                <div class="Diatonic item3">Em<sup class="sev1"> m7</sup></div>
+                <div class="Diatonic item4">F<sup class="sev1"> M7</sup></div>
+                <div class="Diatonic item5">G<sup class="sev1"> m7</sup></div>
+                <div class="Diatonic item6">Am<sup class="sev1"> m7</sup></div>
+                <div class="Diatonic item7">Bdim<sup class="sev1"> m7</sup></div>
+
+                <div class="Dominant name">Dominant</div>
+                <div class="Dominant item1">-<sup class="sev2"> </sup></div>
+                <div class="Dominant item2">A<sup class="sev2"> 7</sup></div>
+                <div class="Dominant item3">B<sup class="sev2"> 7</sup></div>
+                <div class="Dominant item4">C<sup class="sev2"> 7</sup></div>
+                <div class="Dominant item5">D<sup class="sev2"> 7</sup></div>
+                <div class="Dominant item6">E<sup class="sev2"> 7</sup></div>
+                <div class="Dominant item7">-<sup class="sev2"> </sup></div>
+
+                <div class="Parallel name">Parallel</div>
+                <div class="Parallel item1">Cm<sup class="sev3">M7</sup></div>
+                <div class="Parallel item2">Ddim<sup class="sev3">m7</sup></div>
+                <div class="Parallel item3">D#aug<sup class="sev3">M7</sup></div>
+                <div class="Parallel item4">Fm<sup class="sev3">m7</sup></div>
+                <div class="Parallel item5">G<sup class="sev3">m7</sup></div>
+                <div class="Parallel item6">G#<sup class="sev3">M7</sup></div>
+                <div class="Parallel item7">Bdim<sup class="sev3">b7</sup></div>
+
+                <div class="Negative name">Negative</div>
+                <div class="Negative item1">Cm</div>
+                <div class="Negative item2">Bb</div>
+                <div class="Negative item3">Ab</div>
+                <div class="Negative item4">Em</div>
+                <div class="Negative item5">Fm</div>
+                <div class="Negative item6">Eb</div>
+                <div class="Negative item7">Ddim</div>
+            </div>
+        </div>
+
         <!--DROPDOWN MENU-->
         <div id="scalemod">
 
             <div class="key-select-box">
-                <p> key: </p>
+                <p>key</p>
                 <div class="key-selected">C</div>
                 <div class="key-options-container"> 
                     
@@ -81,7 +126,7 @@
             </div>
 
             <div class="scale-select-box">
-                <p> Scale type: </p>
+                <p>Scale type</p>
                 <div class="scale-selected">Major</div>
                 <div class="scale-options-container"> 
                     
@@ -108,7 +153,7 @@
                 </div>
             </div>
             <div class="mode-select-box">
-                <p> Mode: </p>
+                <p>Mode</p>
                 <div class="mode-selected">Ionian</div>
                 <div class="mode-options-container"> 
                     
@@ -141,49 +186,6 @@
                         <label for="Locrian">Locrian</label>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <div id="chords3">
-            <p><span id="related-chords"> Related chords:</span> </p><br/>
-            <input type="checkbox" id="add7" name="add7" value="add7" onclick="hideElement()">
-            <label id="add7label" for="add7"> Add 7th</label>
-            <div id="chordsdisplay">
-                <div class="Diatonic name">Diatonic</div>
-                <div class="Diatonic item1">C<sup class="sev1">  M7</sup></div>
-                <div class="Diatonic item2">Dm<sup class="sev1"> m7</sup></div>
-                <div class="Diatonic item3">Em<sup class="sev1"> m7</sup></div>
-                <div class="Diatonic item4">F<sup class="sev1"> M7</sup></div>
-                <div class="Diatonic item5">G<sup class="sev1"> m7</sup></div>
-                <div class="Diatonic item6">Am<sup class="sev1"> m7</sup></div>
-                <div class="Diatonic item7">Bdim<sup class="sev1"> m7</sup></div>
-
-                <div class="Dominant name">Dominant</div>
-                <div class="Dominant item1">-<sup class="sev2"> </sup></div>
-                <div class="Dominant item2">A<sup class="sev2"> 7</sup></div>
-                <div class="Dominant item3">B<sup class="sev2"> 7</sup></div>
-                <div class="Dominant item4">C<sup class="sev2"> 7</sup></div>
-                <div class="Dominant item5">D<sup class="sev2"> 7</sup></div>
-                <div class="Dominant item6">E<sup class="sev2"> 7</sup></div>
-                <div class="Dominant item7">-<sup class="sev2"> </sup></div>
-
-                <div class="Parallel name">Parallel</div>
-                <div class="Parallel item1">Cm<sup class="sev3">M7</sup></div>
-                <div class="Parallel item2">Ddim<sup class="sev3">m7</sup></div>
-                <div class="Parallel item3">D#aug<sup class="sev3">M7</sup></div>
-                <div class="Parallel item4">Fm<sup class="sev3">m7</sup></div>
-                <div class="Parallel item5">G<sup class="sev3">m7</sup></div>
-                <div class="Parallel item6">G#<sup class="sev3">M7</sup></div>
-                <div class="Parallel item7">Bdim<sup class="sev3">b7</sup></div>
-
-                <div class="Negative name">Negative</div>
-                <div class="Negative item1">Cm</div>
-                <div class="Negative item2">Bb</div>
-                <div class="Negative item3">Ab</div>
-                <div class="Negative item4">Em</div>
-                <div class="Negative item5">Fm</div>
-                <div class="Negative item6">Eb</div>
-                <div class="Negative item7">Ddim</div>
             </div>
         </div>
 

@@ -24,12 +24,48 @@ function scales() {
     location.href="scales.html";
 }
 
-// SCALE/CHORDS/MODES FUNCTIONS
+function initialize() {
+    document.body.onresize = resize;
+    console.log(2);
+}
 
+// ES6 string templates don't work in old Android WebView
+function sformat(format) {
+    var args = arguments;
+    var i = 0;
+    return format.replace(/{(\d*)}/g, function sformatReplace(match, number) {
+      i += 1;
+      if (typeof args[number] !== 'undefined') {
+        return args[number];
+      }
+      if (typeof args[i] !== 'undefined') {
+        return args[i];
+      }
+      return match;
+    });
+}
+  
+//resize font
+function resize(event) {
+    console.log(3);
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    if (w / h < 360 / 640) {
+      document.body.style.fontSize = sformat('{}px', 10 * w / 360);
+    } else {
+      document.body.style.fontSize = sformat('{}px', 10 * h / 640);
+    }
+    console.log(w);
+}
+
+// SCALE/CHORDS/MODES FUNCTIONS
 // key dropdown 
 const keySelected = document.querySelector(".key-selected");
 const keyOptionsContainer = document.querySelector(".key-options-container");
 const keyOptionsList = document.querySelectorAll(".key-option");
+
+window.onload = initialize;
+console.log(1);
 
 keySelected.addEventListener("click", () => {
     // add or remove class "active" from selected

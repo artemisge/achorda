@@ -85,8 +85,8 @@ body {
 
 #start {
     position: absolute;
-    bottom: 3.5rem;    
-    width: 9rem;
+    bottom: 10vh;    
+    width: 30%;
 }
 
 #start:hover {
@@ -230,36 +230,41 @@ body {
 
 #scalemod > div > p {
     text-align: center;
-    font-size: 2.6rem;
+    font-size: 6vw;
     margin: 0;
 }
 
 /* ---------------KEY DROPDOWN --------------*/
-.key-select-box .key-options-container {
-    font-size: 2rem;
+.key-options-container {
+    font-size: 7vw;
     /* color of the dropdown here */
     background: rgba(27, 27, 27, 0.7);
     max-height: 0;
-    width: 4rem;
+    width: 20%;
     opacity: 0;
     transition: all 0.4s;
     border-radius: 8px 6px 6px 8px;
     overflow: hidden;
     position: absolute;
-    bottom: 3rem;
+    bottom: 7vh;
     z-index: 10;
+}
+
+.key-select-box {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 
 .key-selected {
     
-    border: 0.05rem solid  white;
-    width: 4rem;
-    font-size: 2.5rem;
-    text-align: center;
-    padding-right: 0.8rem;
+    border: 0.05rem solid white;
+    font-size: 7vw;
+    padding: 0 3vw 0 2vw;
     border-radius: 1.5rem;
-    position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 1vh;
 }
 
 .key-selected::after {
@@ -267,22 +272,14 @@ body {
 
     position: absolute;
     height: 100%;
-    width: 1rem;
-    top: 1rem;
-    right: 0.2rem;
     transition: all 0.4s;
 }
 
 .key-select-box .key-options-container.active {
-    max-height: 15rem;
+    max-height: 35vh;
     opacity: 1;
     overflow-y: scroll;
     margin-bottom: 1.5rem;
-}
-
-.key-elect-box .key-options-container.active + .key-selected::after {
-    transform: rotateX(180deg);
-    top: -6px;
 }
 
 /* FOR MOST BROWSERS */
@@ -321,32 +318,40 @@ body {
 }
 
 /* ---------------SCALE TYPE DROPDOWN --------------*/
-.scale-select-box .scale-options-container {
-    font-size: 2rem;
+.scale-options-container {
+    font-size: 7vw;
     /* color of the dropdown here */
     background: rgba(27, 27, 27, 0.7);
     max-height: 0;
-    width: auto;
+    width: 40%;
     opacity: 0;
     transition: all 0.4s;
     border-radius: 8px 6px 6px 8px;
     overflow: hidden;
     position: absolute;
-    bottom: 3rem;
+    bottom: 6vh;
     z-index: 10;
-    left: 10rem;
-    right: 10rem;
+}
+
+.scale-select-box {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scale-option {
+    border-bottom: 0.05vw dotted white;
+    font-size: 6vw
 }
 
 .scale-selected {
-    width: auto;
-    font-size: 2.5rem;
-    text-align: center;
-    border: 0.05rem solid  white;
-    padding-right: 0.6rem;
-    border-radius: 1rem;
-    position: relative;
-    margin-bottom: 0.2em;
+    border: 0.05rem solid white;
+    font-size: 7vw;
+    padding: 0 2vw;
+    border-radius: 1.5rem;
+    margin-bottom: 1vh;
 }
 
 .scale-selected::after {
@@ -354,22 +359,14 @@ body {
 
     position: absolute;
     height: 100%;
-    width: 0.5rem;
-    top: 0.5rem;
-    right: 0.2rem;
     transition: all 0.4s;
 }
 
 .scale-select-box .scale-options-container.active {
-    max-height: 15rem;
+    max-height: 35vh;
     opacity: 1;
     overflow-y: scroll;
     margin-bottom: 1.5rem;
-}
-
-.scale-select-box .scale-options-container.active + .scale-selected::after {
-    transform: rotateX(180deg);
-    top: -0.5rem;
 }
 
 /* FOR MOST BROWSERS */
@@ -409,56 +406,53 @@ body {
 
 
 /* ---------------MODE DROPDOWN --------------*/
-.mode-select-box .mode-options-container {
-    font-size: 2rem;
+.mode-options-container {
+    font-size: 6vw;
     /* color of the dropdown here */
     background: rgba(27, 27, 27, 0.7);
     max-height: 0;
-    width: 4rem;
+    width: 25%;
     opacity: 0;
     transition: all 0.4s;
     border-radius: 8px 6px 6px 8px;
     overflow: hidden;
     position: absolute;
-    bottom: 3rem;
+    bottom: 6vh;
     z-index: 10;
 }
 
+.mode-select-box {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
 .mode-selected {
+    border: 0.05rem solid  white;
     width: 4rem;
-    font-size: 2rem;
+    font-size: 8vw;
     text-align: center;
-    padding-right: 0.6rem;
-    background: #272727;
-    border-radius: 8px;
+    padding-right: 0.8rem;
+    border-radius: 1.5rem;
     position: relative;
-    margin-bottom: 0.2rem;
+    margin-bottom: 1rem;
 }
 
 .mode-selected::after {
     content: "";
-    background: url("downarrow.png");
-    background-size: contain;
-    background-repeat: no-repeat;
 
     position: absolute;
     height: 100%;
-    width: 0.5rem;
-    top: 0.5rem;
-    right: 0.2rem;
     transition: all 0.4s;
 }
 
 .mode-select-box .mode-options-container.active {
-    max-height: 15rem;
+    max-height: 35vh;
     opacity: 1;
     overflow-y: scroll;
     margin-bottom: 1.5rem;
-}
-
-.mode-select-box .mode-options-container.active + .mode-selected::after {
-    transform: rotateX(180deg);
-    top: -6px;
 }
 
 /* FOR MOST BROWSERS */
@@ -500,7 +494,7 @@ body {
 #scaledisplay {
     background-color: rgba(0, 0,0, 0.3);
     border-radius: 2rem;
-    font-size: 11vw;
+    font-size: 9vw;
     width: 87%;
     height: 15%;
     margin: 2%;
@@ -509,18 +503,12 @@ body {
     align-items: center;
 }
 
-#scales > #chords3 {
+#chordscontainer {
     width: 100%;
     position: relative;
     text-align: left;
     padding: 1.5rem 0rem;
-    /*border-left: 1em solid rgb(206, 110, 0);
-    border-radius: 10px;*/
     border-top: 0.5rem solid rgb(206, 110, 0);
-}
-
-#chords3 > p {
-    margin: 0rem 1rem;
 }
 
 #scalesmidheader {
@@ -541,7 +529,7 @@ body {
 #add7label {
     position: absolute;
     right: 8vw;
-    top: 0.9vh;
+    top: 0.9vw;
     font-size: 5vw;
     margin-right: 3vw;
 }
@@ -561,12 +549,6 @@ body {
 }
 
 #chordsdisplay > div {
-    /*display: grid;
-    grid-gap: 0rem;
-    padding: 5% 2%;
-    grid-template-columns:  4rem repeat(7, auto);
-    grid-template-rows: repeat(4, 2rem);
-    font-size: 1.7rem;*/
     flex-direction: row;
     flex-flow: row ;
     background-color: rgba(0, 0, 0, 0.3);
@@ -577,9 +559,7 @@ body {
     margin: 0 5% 5% 5%;
     border-radius: 2rem;
     padding: 1rem;
-    height: 15vh;
-    
-    
+    height: 15vh;  
 }
 
 .name {

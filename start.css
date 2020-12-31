@@ -203,29 +203,24 @@ body {
     max-width: 40rem;
     min-height: 32rem;
     min-width: 20rem;
-    text-align: center;
     overflow: hidden;
     display: flex;
     align-content: space-between;
-    justify-content: space-around;
     flex-wrap: wrap;
     position: relative;   
     flex-direction: row;
-
     justify-content: space-around;
-    align-self: center;
 }
 
 
 #scalemod {
     display: flex;
-    flex-flow: row nowrap;
     background-color: rgb(206, 110, 0);
     width: 100%;
-    justify-content: space-around;
     position: absolute;
     bottom: 0;
     height: 15%;
+    justify-content: space-around;
 }
 
 #scalemod > div > p {
@@ -239,19 +234,18 @@ body {
     font-size: 7vw;
     /* color of the dropdown here */
     background: rgba(27, 27, 27, 0.7);
+    width: 13%;
     max-height: 0;
-    width: 20%;
     opacity: 0;
     transition: all 0.4s;
     border-radius: 8px 6px 6px 8px;
     overflow: hidden;
     position: absolute;
-    bottom: 7vh;
+    bottom: 6vh;
     z-index: 10;
 }
 
 .key-select-box {
-    width: 20%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -261,9 +255,9 @@ body {
 .key-selected {
     
     border: 0.05rem solid white;
-    font-size: 7vw;
-    padding: 0 3vw 0 2vw;
-    border-radius: 1.5rem;
+    font-size: 8vw;
+    padding: 0 4vw 0 2vw;
+    border-radius: 50%;
     margin-bottom: 1vh;
 }
 
@@ -334,7 +328,7 @@ body {
 }
 
 .scale-select-box {
-    width: 50%;
+    width: 45%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -348,7 +342,8 @@ body {
 
 .scale-selected {
     border: 0.05rem solid white;
-    font-size: 7vw;
+    overflow-y: scroll;
+    font-size: 6vw;
     padding: 0 2vw;
     border-radius: 1.5rem;
     margin-bottom: 1vh;
@@ -411,7 +406,6 @@ body {
     /* color of the dropdown here */
     background: rgba(27, 27, 27, 0.7);
     max-height: 0;
-    width: 25%;
     opacity: 0;
     transition: all 0.4s;
     border-radius: 8px 6px 6px 8px;
@@ -422,7 +416,7 @@ body {
 }
 
 .mode-select-box {
-    width: 25%;
+    width: 35%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -431,8 +425,7 @@ body {
 
 .mode-selected {
     border: 0.05rem solid  white;
-    width: 4rem;
-    font-size: 8vw;
+    font-size: 7vw;
     text-align: center;
     padding-right: 0.8rem;
     border-radius: 1.5rem;
@@ -545,7 +538,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     overflow: scroll;
-    height: 60%;
+    height: 65%;
 }
 
 #chordsdisplay > div {

@@ -499,14 +499,14 @@ body {
 
 #scaledisplay {
     background-color: rgba(0, 0,0, 0.3);
-    padding: 0rem 2rem;
     border-radius: 2rem;
     font-size: 11vw;
-    text-align: center;
     width: 87%;
     height: 15%;
-    white-space: nowrap;
     margin: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #scales > #chords3 {
@@ -529,8 +529,8 @@ body {
 
 #add7 {
     position: absolute;
-    right: 1rem;
-    top: 1rem;
+    right: 3vw;
+    top: 2.5vh;
     transform: scale(2);
   -ms-transform: scale(2);
   -webkit-transform: scale(2);
@@ -540,9 +540,10 @@ body {
 
 #add7label {
     position: absolute;
-    right: 3rem;
-    top: 0.5rem;
-    font-size: large;
+    right: 8vw;
+    top: 0.9vh;
+    font-size: 5vw;
+    margin-right: 3vw;
 }
 
 #related-chords {
@@ -570,7 +571,7 @@ body {
     flex-flow: row ;
     background-color: rgba(0, 0, 0, 0.3);
     display: grid;
-    font-size: x-large;
+    font-size: 6vw;
     grid-template-columns: repeat(7, auto);
     grid-template-rows: repeat(2, auto);
     margin: 0 5% 5% 5%;
@@ -587,17 +588,17 @@ body {
 }
 
 sup.sev1 {
-    font-size: small;
+    font-size: 4vw;
     display: none;
 }
 
 sup.sev2 {
-    font-size: small;
+    font-size: 4vw;
     display: none;
 }
 
 sup.sev3 {
-    font-size: small;
+    font-size: 4vw;
     display: none;
 }
 

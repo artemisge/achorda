@@ -66,15 +66,15 @@ body {
 
 #circle {
     position: absolute;
-    width: 12rem;
-    top: 4rem;
+    width: 45%;
+    top: 10%;
 }
 
 #girl {
-    padding-left: 3rem;
+    padding-left: 8%;
     position: absolute;
-    width: 12.5rem;
-    top: 3rem;
+    width: 43%;
+    top: 7.5%;
 }
 
 #girl:hover {
@@ -134,7 +134,7 @@ body {
 #about {
     position: absolute;
     margin-right: 5%;
-    margin-top: 2%;
+    margin-top: 1.5vh;
     right: 0;
     color:white;
     text-shadow: none;
@@ -147,12 +147,12 @@ body {
 }
 
 .menubox p {
-    margin: 0rem;
-    font-size:  1.5rem;
+    margin: 0;
+    font-size:  3vh;
 }
 
 .menubox {
-    padding: 5% 4%;
+    padding: 5% 6%;
     border-radius: 1rem;
     width: 87%;
     height: 27%;
@@ -165,7 +165,7 @@ body {
 }
 
 #menu-title {
-    font-size: 2.5rem;
+    font-size: 5vh;
 }
 
 #songlistmenu {
@@ -223,6 +223,9 @@ body {
     background-color: rgb(206, 110, 0);
     width: 100%;
     justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    height: 15%;
 }
 
 #scalemod > div > p {
@@ -498,10 +501,12 @@ body {
     background-color: rgba(0, 0,0, 0.3);
     padding: 0rem 2rem;
     border-radius: 2rem;
-    font-size: 4.2rem;
+    font-size: 11vw;
     text-align: center;
     width: 87%;
-    height: 7rem;
+    height: 15%;
+    white-space: nowrap;
+    margin: 2%;
 }
 
 #scales > #chords3 {
@@ -518,6 +523,10 @@ body {
     margin: 0rem 1rem;
 }
 
+#scalesmidheader {
+    height: 5%;
+}
+
 #add7 {
     position: absolute;
     right: 1rem;
@@ -531,25 +540,50 @@ body {
 
 #add7label {
     position: absolute;
-    right: 2rem;
+    right: 3rem;
     top: 0.5rem;
-    font-size: 2rem;
+    font-size: large;
 }
 
 #related-chords {
-    font-size: 3.5rem;
+    font-size: 7vw;
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
 }
 
-
 #chordsdisplay {
-    display: grid;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: scroll;
+    height: 60%;
+}
+
+#chordsdisplay > div {
+    /*display: grid;
     grid-gap: 0rem;
-    padding: 0.5rem 0.5rem;
+    padding: 5% 2%;
     grid-template-columns:  4rem repeat(7, auto);
     grid-template-rows: repeat(4, 2rem);
-    font-size: 1.7rem;
+    font-size: 1.7rem;*/
     flex-direction: row;
     flex-flow: row ;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: grid;
+    font-size: x-large;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(2, auto);
+    margin: 0 5% 5% 5%;
+    border-radius: 2rem;
+    padding: 1rem;
+    height: 15vh;
+    
+    
+}
+
+.name {
+    grid-column-start: 1;
+    grid-column-end: 8;
 }
 
 sup.sev1 {
@@ -565,6 +599,10 @@ sup.sev2 {
 sup.sev3 {
     font-size: small;
     display: none;
+}
+
+#scales-topheader {
+    background-color: rgb(206, 110, 0);
 }
 
 /*-----------------PROGRESSIONS----------------*/
@@ -599,7 +637,7 @@ sup.sev3 {
     width: 100%;
     display: flex;
     justify-content:left;
-    font-size: 2rem;
+    font-size: 3.5vh;
 }
 
 #progressions-topheader {
@@ -610,9 +648,6 @@ sup.sev3 {
     background-color: #c5acd6;
 }
 
-#scales-topheader {
-    background-color: rgb(206, 110, 0);
-}
 
 #bottomheader {
     background:  url('progressions-bottom.svg');
@@ -622,59 +657,64 @@ sup.sev3 {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 7rem;
+    height: 12%;
     display: flex;
     width: 100%;
     justify-content: space-around;
     align-self: center;
-    font-size: 2rem;
-    margin-top: 3rem;
+    font-size: 3.5vh;
 }
 
 #title {
     margin:1rem;
-    margin-top: 0.6rem;
+    margin-top: 0.5vh;
     position: relative;
     color:white;
     text-shadow: none;
-    font-size: 3rem;
+    font-size: 5vh;
 }
 
 #presetprogressions {
-    position: relative;
+    position: absolute;
     background-color: #482351;
     opacity: 80%;
-    border-radius: 10rem;
     z-index: 6;
-    height: 5rem;
-    margin-bottom: 2rem;
-    
+    height:120%;
+    bottom: 10%;
     border-radius: 100%;
-    margin-bottom: 2rem;
     padding: 0.5rem;
+    left: 5%;
+    width: 30%;
 }
 
 #ADD {
-    background-color: #482351;
-    border-radius: 50%;
-    margin-bottom: 2rem;
-    padding: 0.5rem;
-    height: 5rem;
-    width: 5rem;
+    background-color: rgb(52, 152, 165);
+    width: 20%;
+
+    position: absolute;
+    z-index: 6;
+    height:100%;
+    bottom: 10%;
+    border-radius: 100%;
+    padding-top: 2.9vh;
 }
 
 #myprogressions {
     background-color: rgb(151, 81, 0);
+    position: absolute;
     opacity: 80%;
-    
-    border-radius: 50%;
-    margin-bottom: 2rem;
+    z-index: 6;
+    height:120%;
+    bottom: 10%;
+    border-radius: 100%;
     padding: 0.5rem;
+    right: 5%;
+    width: 30%;
 }
 
 #progList {
     overflow-y: auto;
-    height: 48rem;
+    height: 80%;
 }
 
 #proglistelement {
@@ -683,10 +723,11 @@ sup.sev3 {
     margin: 1rem;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    height: 12rem;
+    height: 24%;
     border-radius: 3rem;
 
     text-align: left;
-    font-size: 3rem;
+    font-size: 5vh;
+    padding: 2vh;
     
 }

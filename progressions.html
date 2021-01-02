@@ -21,12 +21,17 @@
         </div>
         <div id="progList">
         </div>
-        <div id="bottomheader">
+        <div id="prog-bottomheader">
             <div id="presetprogressions" onclick="loadPresetProgressions()">
                 Preset<br />Progressions</div>
-            <div id="ADD">ADD</div>
+            <div id="ADD" onclick="add()">ADD</div>
             <div id="myprogressions"  onclick="loadMyProgressions()">
                 My<br />Progressions</div>
+        </div>
+        <div id="addPage">
+            <img src="add-icon.svg" id="add-icon" onclick="addChord()"/> 
+            <div id="add-cancel" onclick="cancelProg()">Cancel</div>
+            <div id="add-save" onclick="saveProg()">Save</div>
         </div>
     </div>
     

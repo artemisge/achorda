@@ -420,12 +420,15 @@ function progressions() {
 function loadPresetProgressions() {
     document.getElementById("presetprogressions").style.opacity = "1";
     document.getElementById("myprogressions").style.opacity = "0.7";
+
+    document.getElementById("presetprogressions").style.borderRadius = "0 4rem 0 0";
+    document.getElementById("myprogressions").style.borderRadius = "4rem 4rem 0 0";
     
     let parent = document.getElementById("progList");
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
-    
+
     for (let i = 0; i < presetProgressions.length; i++) {
         var div = document.createElement('div');
         div.id = "proglistelement";
@@ -437,6 +440,9 @@ function loadPresetProgressions() {
 function loadMyProgressions() {
     document.getElementById("presetprogressions").style.opacity = "0.7";
     document.getElementById("myprogressions").style.opacity = "1";
+
+    document.getElementById("presetprogressions").style.borderRadius = "4rem 4rem 0 0";
+    document.getElementById("myprogressions").style.borderRadius = "4rem 0 0 0";
 
     let parent = document.getElementById("progList");
     while (parent.firstChild) {
@@ -450,6 +456,23 @@ function loadMyProgressions() {
         div.innerHTML = str;
         document.getElementById("progList").appendChild(div);
     }
+}
+
+function add() {
+    document.getElementById("addPage").style.display = "flex";
+    document.getElementById("addPage").style.alignItems = "flex-start";
+}
+
+function cancelProg() {
+    document.getElementById("addPage").style.display = "none";
+}
+
+function addChord() {
+    console.log("heyy");
+}
+
+function saveProg() {
+
 }
 
 // OTHER

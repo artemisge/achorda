@@ -146,6 +146,10 @@ body {
     transform: scale(1.1);
 }
 
+#menu-topheader {
+    background-color: #c5acd6;
+}
+
 .menubox p {
     margin: 0;
     font-size:  3vh;
@@ -215,12 +219,12 @@ body {
 
 #scalemod {
     display: flex;
-    background-color: rgb(206, 110, 0);
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 15%;
-    justify-content: space-around;
+    height: 6rem;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 #scalemod > div > p {
@@ -234,31 +238,44 @@ body {
     font-size: 7vw;
     /* color of the dropdown here */
     background: rgba(27, 27, 27, 0.7);
-    width: 13%;
+    width: 4rem;
     max-height: 0;
     opacity: 0;
     transition: all 0.4s;
     border-radius: 8px 6px 6px 8px;
     overflow: hidden;
     position: absolute;
-    bottom: 6vh;
+    bottom: 3rem;
     z-index: 10;
+    padding-left: 1rem;
 }
 
 .key-select-box {
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+    left: 0;
+    right: 0;
 }
 
 .key-selected {
-    
-    border: 0.05rem solid white;
     font-size: 8vw;
-    padding: 0 4vw 0 2vw;
-    border-radius: 50%;
-    margin-bottom: 1vh;
+    width: 4rem;
+    background-color:  rgb(151, 81, 0);
+    border: 0.1rem solid white;
+    border-bottom: none;
+    position: absolute;
+    z-index: 2;
+    height: 4rem;
+    bottom: 0;
+    border-radius: 100% 100% 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    left: 0;
+    right: 0;
 }
 
 .key-selected::after {
@@ -317,18 +334,18 @@ body {
     /* color of the dropdown here */
     background: rgba(27, 27, 27, 0.7);
     max-height: 0;
-    width: 40%;
+    width: 38%;
     opacity: 0;
     transition: all 0.4s;
     border-radius: 8px 6px 6px 8px;
     overflow: hidden;
     position: absolute;
-    bottom: 6vh;
+    bottom: 3rem;
     z-index: 10;
 }
 
 .scale-select-box {
-    width: 45%;
+    width: 40%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -341,12 +358,18 @@ body {
 }
 
 .scale-selected {
-    border: 0.05rem solid white;
-    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 4rem 0 0;
     font-size: 6vw;
     padding: 0 2vw;
-    border-radius: 1.5rem;
-    margin-bottom: 1vh;
+    left: 0;
+    bottom: 0;
+    background-color:  rgb(151, 81, 0);
+    width: 45%;
+    position: absolute;
+    height: 4rem;
 }
 
 .scale-selected::after {
@@ -403,7 +426,7 @@ body {
 /* ---------------MODE DROPDOWN --------------*/
 .mode-options-container {
     font-size: 6vw;
-    /* color of the dropdown here */
+    width: 25%;
     background: rgba(27, 27, 27, 0.7);
     max-height: 0;
     opacity: 0;
@@ -411,12 +434,12 @@ body {
     border-radius: 8px 6px 6px 8px;
     overflow: hidden;
     position: absolute;
-    bottom: 6vh;
+    bottom: 3rem;
     z-index: 10;
 }
 
 .mode-select-box {
-    width: 35%;
+    width: 40%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -424,13 +447,18 @@ body {
 }
 
 .mode-selected {
-    border: 0.05rem solid  white;
-    font-size: 7vw;
-    text-align: center;
-    padding-right: 0.8rem;
-    border-radius: 1.5rem;
-    position: relative;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4rem 0 0 0;
+    font-size: 6vw;
+    padding: 0 2vw;
+    right: 0;
+    bottom: 0;
+    background-color:  rgb(151, 81, 0);
+    width: 45%;
+    position: absolute;
+    height: 4rem;
 }
 
 .mode-selected::after {
@@ -501,7 +529,7 @@ body {
     position: relative;
     text-align: left;
     padding: 1.5rem 0rem;
-    border-top: 0.5rem solid rgb(206, 110, 0);
+    border-top: 0.5rem solid rgb(151, 81, 0);
 }
 
 #scalesmidheader {
@@ -576,7 +604,7 @@ sup.sev3 {
 }
 
 #scales-topheader {
-    background-color: rgb(206, 110, 0);
+    background-color:rgb(151, 81, 0);
 }
 
 /*-----------------PROGRESSIONS----------------*/
@@ -618,15 +646,7 @@ sup.sev3 {
     background-color: rgb(28, 88, 112);
 }
 
-#menu-topheader {
-    background-color: #c5acd6;
-}
-
-
-#bottomheader {
-    background:  url('progressions-bottom.svg');
-    background-repeat: no-repeat;
-    background-position: center top; 
+#prog-bottomheader {
     position: relative;
     bottom: 0;
     left: 0;
@@ -649,41 +669,41 @@ sup.sev3 {
 }
 
 #presetprogressions {
+    background-color:rgb(28, 88, 112);
     position: absolute;
-    background-color: #482351;
-    opacity: 80%;
     z-index: 6;
-    height:120%;
-    bottom: 10%;
-    border-radius: 100%;
-    padding: 0.5rem;
-    left: 5%;
-    width: 30%;
+    height: 4rem;
+    bottom: 0;
+    border-radius: 0 4rem 0 0;
+    padding: 0.2rem;
+    left: 0;
+    width: 40%;
 }
 
 #ADD {
-    background-color: rgb(52, 152, 165);
+    background-color: rgb(28, 88, 112);
     width: 20%;
 
     position: absolute;
     z-index: 6;
     height:100%;
-    bottom: 10%;
+    bottom: 0.5rem;
     border-radius: 100%;
-    padding-top: 2.9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #myprogressions {
-    background-color: rgb(151, 81, 0);
+    background-color:rgb(28, 88, 112);
     position: absolute;
-    opacity: 80%;
     z-index: 6;
-    height:120%;
-    bottom: 10%;
-    border-radius: 100%;
-    padding: 0.5rem;
-    right: 5%;
-    width: 30%;
+    height: 4rem;
+    bottom: 0;
+    border-radius: 4rem 4rem 0 0;
+    padding: 0.2rem;
+    right: 0;
+    width: 40%;
 }
 
 #progList {
@@ -704,4 +724,53 @@ sup.sev3 {
     font-size: 5vh;
     padding: 2vh;
     
+}
+
+#addPage {
+    display: none;
+    height: 80%;
+    width: 95%;
+    background: rgba(71, 71, 71, 0.9);
+    position: absolute;
+    z-index: 6;
+    font-size: 6vw;
+    left: 0; 
+    top: 0;
+    bottom: 0;
+    right: 0; 
+    margin: auto; 
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+#add-cancel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #313131;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 3rem;
+    border-right: 0.5vw solid white;
+    border-radius: 1rem 0 0 1rem;
+}
+
+#add-save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #313131;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 3rem;
+    border-left: 0.5vw solid white;
+    border-radius: 0 1rem 1rem 0;
+}
+
+#add-icon {
+    width: 3rem;
 }

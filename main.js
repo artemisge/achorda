@@ -7,6 +7,15 @@ const harmonicMinor = "2 1 2 2 1 3 1";
 const harmonicMajor = "2 2 1 2 1 3 1";
 const doubleHarmonicMajor = "1 3 1 2 1 3 1";
 
+// progressions
+var presetProgressions = new Array();
+var myProgressions = new Array();
+
+presetProgressions[0] = ["Am", "F", "C", "G", "C"];
+presetProgressions[1] = ["Am", "Fm", "Cm", "Gm", "Cm"];
+
+myProgressions[0] = ["Am", "Fm", "Cm"];
+
 // GO TO *__* FUNCTIONS
 
 function loadmenu() {
@@ -65,7 +74,6 @@ const keyOptionsContainer = document.querySelector(".key-options-container");
 const keyOptionsList = document.querySelectorAll(".key-option");
 
 window.onload = initialize;
-console.log(1);
 
 keySelected.addEventListener("click", () => {
     // add or remove class "active" from selected
@@ -409,8 +417,40 @@ function progressions() {
     location.href="progressions.html";
 }
 
+function loadPresetProgressions() {
+    document.getElementById("presetprogressions").style.opacity = "1";
+    document.getElementById("myprogressions").style.opacity = "0.7";
+    
+    let parent = document.getElementById("progList");
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+    
+    for (let i = 0; i < presetProgressions.length; i++) {
+        var div = document.createElement('div');
+        div.id = "proglistelement";
+        div.innerHTML = presetProgressions[i];
+        document.getElementById("progList").appendChild(div);
+    }
+}
 
+function loadMyProgressions() {
+    document.getElementById("presetprogressions").style.opacity = "0.7";
+    document.getElementById("myprogressions").style.opacity = "1";
 
+    let parent = document.getElementById("progList");
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+
+    for (let i = 0; i < myProgressions.length; i++) {
+        var div = document.createElement('div');
+        div.id = 'proglistelement';
+        let str = myProgressions[i]
+        div.innerHTML = str;
+        document.getElementById("progList").appendChild(div);
+    }
+}
 
 // OTHER
 function onFullScreen(event) {
@@ -432,3 +472,5 @@ function onFullScreen(event) {
 function about() {
     console.log("yooo");
 }
+
+// icons-svg: https://www.iconfinder.com/icons/3695059/music_play_play_button_player_icon

@@ -10,8 +10,9 @@
     <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Delius Swash Caps' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Gaegu' rel='stylesheet'>
+    <script src="main.js"></script>
 </head>
-<body>
+<body onload="loadPresetProgressions()">
     <div id="progressions">
         <div class="topheader" id="progressions-topheader">
             <img src="backarrow.svg" id="arrow" onclick="loadmenu()"/> 
@@ -19,22 +20,15 @@
             <p id="about" onclick="about()"> About </p>
         </div>
         <div id="progList">
-            <div id="proglistelement">
-                prog 1
-            </div>
-            <div id="proglistelement">
-                prog 2
-            </div>
         </div>
         <div id="bottomheader">
-            <div id="presetprogressions">Preset<br />Progressions</div>
+            <div id="presetprogressions" onclick="loadPresetProgressions()">
+                Preset<br />Progressions</div>
             <div id="ADD">ADD</div>
-            <div id="myprogressions">My<br />Progressions</div>
+            <div id="myprogressions"  onclick="loadMyProgressions()">
+                My<br />Progressions</div>
         </div>
-
-
-
     </div>
-    <script src="main.js"></script>
+    
 </body>
 </html>

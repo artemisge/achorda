@@ -73,6 +73,10 @@ html, body {
     background-size: 100% 100%;
     height: 100%;
     width: 100%;
+    max-height: 64rem;
+    max-width: 40rem;
+    min-height: 32rem;
+    min-width: 20rem;
     text-align: center;
     overflow: hidden;
     /* padding-bottom: 5em; /* space for the menubar */
@@ -97,7 +101,7 @@ html, body {
 
 #circle {
     position: absolute;
-    width: 45rem;
+    width: 45%;
     top: 10%;
 }
 
@@ -116,8 +120,8 @@ html, body {
 
 #start {
     position: absolute;
-    bottom: 9%;    
-    width: 35rem;
+    bottom: 10vh;    
+    width: 30%;
 }
 
 #start:hover {
@@ -130,85 +134,96 @@ html, body {
 
 #menu {
     background: rgb(200, 200, 200);
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
     height: 100%;
     width: 100%;
+    max-height: 64rem;
+    max-width: 40rem;
+    min-height: 32rem;
+    min-width: 20rem;
     text-align: center;
     overflow: hidden;
     display: flex;
     align-content: space-between;
     justify-content: space-around;
     flex-wrap: wrap;
+    position: relative;   
     flex-direction: row;
 }
 
-.topheader {
-    width: 100%;
-    font-size: 6rem;
-    display: flex;
-    align-items: center;
-    padding: 2rem;
+#arrow {
+    margin: 2%;
+    margin-left: 5%;
 }
 
-.topheader > p {
-    margin: 0;
+#arrow:hover {
+    -webkit-filter: brightness(120%) contrast(1.2);
+    filter: brightness(120%) contrast(1.2);
+    transform: scale(1.1);
+}
+
+
+#about {
+    position: absolute;
+    margin-right: 5%;
+    margin-top: 1.5vh;
+    right: 0;
+    color:white;
+    text-shadow: none;
+}
+
+#about:hover {
+    -webkit-filter: brightness(120%) contrast(1.2);
+    filter: brightness(120%) contrast(1.2);
+    transform: scale(1.1);
 }
 
 #menu-topheader {
     background-color: #c5acd6;
 }
 
-#arrow {
-    margin-left: 4rem;
-    width: 4rem;
-}
-
-#arrow:hover, #about:hover, .menubox:hover {
-    -webkit-filter: brightness(120%) contrast(1.2);
-    filter: brightness(120%) contrast(1.2);
-    transform: scale(1.1);
-}
-
-#about {
-    margin-right: 4rem;
-    position: absolute;
-    right: 0;
-    color:white;
-    text-shadow: none;
+.menubox p {
+    margin: 0;
+    font-size:  3vh;
 }
 
 .menubox {
-    padding: 6rem 7rem;
+    padding: 5% 6%;
     border-radius: 1rem;
     width: 87%;
     height: 27%;
 }
 
-.menubox p {
-    margin: 0;
-    font-size: 5.5rem;
+.menubox:hover {
+    -webkit-filter: brightness(120%) contrast(1.2);
+    filter: brightness(120%) contrast(1.2);
+    transform: scale(1.1);
 }
 
 #menu-title {
-    font-size: 9rem;
+    font-size: 5vh;
 }
 
 #songlistmenu {
     background-color: #482351;
     text-align: left;
-    border-left: 2.5rem solid #c5acd6;
+    border-left: 1rem solid #c5acd6;
 }
 
 #progressionmenu {
     background-color: rgb(28, 88, 112);
     text-align: right;
-    border-right: 2.5rem solid #c5acd6;
+    border-right: 1rem solid #c5acd6;
 }
 
 #scalesmenu {
     background-color: rgb(151, 81, 0);
     text-align: left;
-    border-left: 2.5rem solid #c5acd6;
-    margin-bottom: 4rem;
+    border-left: 1rem solid #c5acd6;
+    margin-bottom: 2rem;
 }
 
 /* ---------------SCALES OPTION--------------- */
@@ -223,6 +238,10 @@ html, body {
     background-size: 100% 100%;
     height: 100%;
     width: 100%;
+    max-height: 64rem;
+    max-width: 40rem;
+    min-height: 32rem;
+    min-width: 20rem;
     overflow: hidden;
     display: flex;
     align-content: space-between;
@@ -632,6 +651,10 @@ sup.sev3 {
     background-size: 100% 100%;
     height: 100%;
     width: 100%;
+    max-height: 64rem;
+    max-width: 40rem;
+    min-height: 32rem;
+    min-width: 20rem;
     text-align: center;
     overflow: hidden;
     /* padding-bottom: 5em; /* space for the menubar */
@@ -640,6 +663,18 @@ sup.sev3 {
     flex-direction: column;
     /*position: relative; */  
     justify-content: space-between;
+}
+
+.topheader {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 7%;
+    width: 100%;
+    display: flex;
+    justify-content:left;
+    font-size: 3.5vh;
 }
 
 #progressions-topheader {
@@ -660,10 +695,12 @@ sup.sev3 {
 }
 
 #title {
+    margin:1rem;
+    margin-top: 0.5vh;
+    position: relative;
     color:white;
     text-shadow: none;
-    font-size: 7rem;
-    margin-left: 4rem;
+    font-size: 5vh;
 }
 
 #presetprogressions {

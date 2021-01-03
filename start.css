@@ -63,6 +63,10 @@ html, body {
     align-items: center;
 }
 
+p {
+    margin: 0;
+}
+
 /* -------------------START--------------------- */
 
 #startpg {
@@ -185,7 +189,7 @@ html, body {
 
 .menubox p {
     margin: 0;
-    font-size: 5.5rem;
+    font-size: 5rem;
 }
 
 #menu-title {
@@ -238,30 +242,29 @@ html, body {
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 6rem;
+    height: 23rem;
     justify-content: space-between;
     align-items: flex-start;
 }
 
 #scalemod > div > p {
     text-align: center;
-    font-size: 6vw;
+    font-size: 6rem;
     margin: 0;
 }
 
 /* ---------------KEY DROPDOWN --------------*/
 .key-options-container {
-    font-size: 7vw;
-    /* color of the dropdown here */
+    font-size: 7rem;
     background: rgba(27, 27, 27, 0.7);
-    width: 4rem;
+    width: 15rem;
     max-height: 0;
     opacity: 0;
     transition: all 0.4s;
-    border-radius: 8px 6px 6px 8px;
+    border-radius: 2rem 1rem 1rem 2rem;
     overflow: hidden;
     position: absolute;
-    bottom: 3rem;
+    bottom: 14rem;
     z-index: 10;
     padding-left: 1rem;
 }
@@ -276,14 +279,14 @@ html, body {
 }
 
 .key-selected {
-    font-size: 8vw;
-    width: 4rem;
+    font-size: 8rem;
+    width: 15rem;
     background-color:  rgb(151, 81, 0);
     border: 0.1rem solid white;
     border-bottom: none;
     position: absolute;
     z-index: 2;
-    height: 4rem;
+    height: 15rem;
     bottom: 0;
     border-radius: 100% 100% 0 0;
     display: flex;
@@ -292,6 +295,7 @@ html, body {
     margin: auto;
     left: 0;
     right: 0;
+    padding-right: 1.5rem;
 }
 
 .key-selected::after {
@@ -303,7 +307,7 @@ html, body {
 }
 
 .key-select-box .key-options-container.active {
-    max-height: 35vh;
+    max-height: 50rem;
     opacity: 1;
     overflow-y: scroll;
     margin-bottom: 1.5rem;
@@ -313,12 +317,12 @@ html, body {
 .key-select-box .key-options-container::-webkit-scrollbar {
     width: 0.5rem;
     background: #0d141f;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 1rem 1rem 0;
 }
 
 .key-select-box .key-options-container::-webkit-scrollbar-thumb {
     background: #525861;
-    border-radius: 8px;
+    border-radius: 2rem;
 }
 
 /* FOR FIREFOX */
@@ -346,18 +350,18 @@ html, body {
 
 /* ---------------SCALE TYPE DROPDOWN --------------*/
 .scale-options-container {
-    font-size: 7vw;
-    /* color of the dropdown here */
+    font-size: 7rem;
     background: rgba(27, 27, 27, 0.7);
-    max-height: 0;
     width: 38%;
+    max-height: 0;
     opacity: 0;
     transition: all 0.4s;
-    border-radius: 8px 6px 6px 8px;
+    border-radius: 2rem 1rem 1rem 2rem;
     overflow: hidden;
     position: absolute;
-    bottom: 3rem;
+    bottom: 14rem;
     z-index: 10;
+    padding-left: 1rem;
 }
 
 .scale-select-box {
@@ -377,15 +381,14 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0 4rem 0 0;
-    font-size: 6vw;
-    padding: 0 2vw;
+    border-radius: 0 50rem 0 0;
+    font-size: 6rem;
     left: 0;
     bottom: 0;
     background-color:  rgb(151, 81, 0);
     width: 45%;
     position: absolute;
-    height: 4rem;
+    height: 15rem;
 }
 
 .scale-selected::after {
@@ -397,7 +400,7 @@ html, body {
 }
 
 .scale-select-box .scale-options-container.active {
-    max-height: 35vh;
+    max-height: 50rem;
     opacity: 1;
     overflow-y: scroll;
     margin-bottom: 1.5rem;
@@ -407,12 +410,12 @@ html, body {
 .scale-select-box .scale-options-container::-webkit-scrollbar {
     width: 0.5rem;
     background: #0d141f;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 1rem 1rem 0;
 }
 
 .scale-select-box .scale-options-container::-webkit-scrollbar-thumb {
     background: #525861;
-    border-radius: 8px;
+    border-radius: 2rem;
 }
 
 /* FOR FIREFOX */
@@ -441,17 +444,18 @@ html, body {
 
 /* ---------------MODE DROPDOWN --------------*/
 .mode-options-container {
-    font-size: 6vw;
-    width: 25%;
+    font-size: 7rem;
     background: rgba(27, 27, 27, 0.7);
+    width: 25%;
     max-height: 0;
     opacity: 0;
     transition: all 0.4s;
-    border-radius: 8px 6px 6px 8px;
+    border-radius: 2rem 1rem 1rem 2rem;
     overflow: hidden;
     position: absolute;
-    bottom: 3rem;
+    bottom: 14rem;
     z-index: 10;
+    padding-left: 1rem;
 }
 
 .mode-select-box {
@@ -466,15 +470,14 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 4rem 0 0 0;
-    font-size: 6vw;
-    padding: 0 2vw;
+    border-radius: 50rem 0 0 0;
+    font-size: 6rem;
     right: 0;
     bottom: 0;
     background-color:  rgb(151, 81, 0);
     width: 45%;
     position: absolute;
-    height: 4rem;
+    height: 15rem;
 }
 
 .mode-selected::after {
@@ -486,7 +489,7 @@ html, body {
 }
 
 .mode-select-box .mode-options-container.active {
-    max-height: 35vh;
+    max-height: 50rem;
     opacity: 1;
     overflow-y: scroll;
     margin-bottom: 1.5rem;
@@ -496,12 +499,12 @@ html, body {
 .mode-select-box .mode-options-container::-webkit-scrollbar {
     width: 0.5rem;
     background: #0d141f;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 1rem 1rem 0;
 }
 
 .mode-select-box .mode-options-container::-webkit-scrollbar-thumb {
     background: #525861;
-    border-radius: 8px;
+    border-radius: 2rem;
 }
 
 /* FOR FIREFOX */
@@ -530,11 +533,11 @@ html, body {
 
 #scaledisplay {
     background-color: rgba(0, 0,0, 0.3);
-    border-radius: 2rem;
-    font-size: 9vw;
+    border-radius: 5rem;
+    font-size: 10rem;
     width: 87%;
     height: 15%;
-    margin: 2%;
+    margin: 4%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -545,17 +548,18 @@ html, body {
     position: relative;
     text-align: left;
     padding: 1.5rem 0rem;
-    border-top: 0.5rem solid rgb(151, 81, 0);
+    border-top: 1.5rem solid rgb(151, 81, 0);
 }
 
 #scalesmidheader {
-    height: 5%;
+    display: flex;
+    width: 100%;
+    font-size: 6rem;
+    padding: 1rem;
 }
 
 #add7 {
-    position: absolute;
-    right: 3vw;
-    top: 2.5vh;
+    margin-right: 5rem;
     transform: scale(2);
   -ms-transform: scale(2);
   -webkit-transform: scale(2);
@@ -564,25 +568,22 @@ html, body {
 }
 
 #add7label {
-    position: absolute;
-    right: 8vw;
-    top: 0.9vw;
-    font-size: 5vw;
-    margin-right: 3vw;
+    right: 0;
+    font-size: 5rem;
+    margin-left: auto;
+    padding-right: 2rem;
 }
 
 #related-chords {
-    font-size: 7vw;
-    position: absolute;
-    top: 0.5rem;
-    left: 1rem;
+    font-size: 7rem;
+    margin-left: 3rem;
 }
 
 #chordsdisplay {
     flex-direction: row;
     justify-content: space-between;
-    overflow: scroll;
-    height: 65%;
+    overflow-y: scroll;
+    height: 60%;
 }
 
 #chordsdisplay > div {
@@ -590,13 +591,14 @@ html, body {
     flex-flow: row ;
     background-color: rgba(0, 0, 0, 0.3);
     display: grid;
-    font-size: 6vw;
+    font-size: 6rem;
     grid-template-columns: repeat(7, auto);
     grid-template-rows: repeat(2, auto);
-    margin: 0 5% 5% 5%;
-    border-radius: 2rem;
-    padding: 1rem;
-    height: 15vh;  
+    margin: 0 3% 5% 3%;
+    border-radius: 5rem;
+    padding: 2rem;
+    height: 30rem;  
+    align-items: center;
 }
 
 .name {
@@ -605,17 +607,17 @@ html, body {
 }
 
 sup.sev1 {
-    font-size: 4vw;
+    font-size: 4rem;
     display: none;
 }
 
 sup.sev2 {
-    font-size: 4vw;
+    font-size: 4rem;
     display: none;
 }
 
 sup.sev3 {
-    font-size: 4vw;
+    font-size: 4rem;
     display: none;
 }
 
@@ -651,12 +653,12 @@ sup.sev3 {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 12%;
+    height: 12rem;
     display: flex;
     width: 100%;
     justify-content: space-around;
     align-self: center;
-    font-size: 3.5vh;
+    font-size: 5rem;
 }
 
 #title {
@@ -670,58 +672,61 @@ sup.sev3 {
     background-color:rgb(28, 88, 112);
     position: absolute;
     z-index: 6;
-    height: 4rem;
+    height: 15rem;
     bottom: 0;
     border-radius: 0 4rem 0 0;
     padding: 0.2rem;
     left: 0;
-    width: 40%;
+    width: 45%;
 }
 
 #ADD {
     background-color: rgb(28, 88, 112);
-    width: 20%;
-
+    width: 15%;
     position: absolute;
-    z-index: 6;
-    height:100%;
-    bottom: 0.5rem;
-    border-radius: 100%;
+    z-index: 7;
+    height: 15rem;
+    bottom: 0rem;
+    border-radius: 100% 100% 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 0.1rem solid white;
+    border-bottom: none;
 }
 
 #myprogressions {
     background-color:rgb(28, 88, 112);
     position: absolute;
     z-index: 6;
-    height: 4rem;
+    height: 15rem;
     bottom: 0;
     border-radius: 4rem 4rem 0 0;
     padding: 0.2rem;
     right: 0;
-    width: 40%;
+    width: 45%;
 }
 
 #progList {
-    overflow-y: auto;
-    height: 80%;
+    height: 75%;
+    overflow-y: scroll;
+    margin-bottom: 5rem;
 }
 
 #proglistelement {
     background-color:rgba(0, 0, 0, 0.3);
-    
-    margin: 1rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    height: 24%;
-    border-radius: 3rem;
-
+    width: 87%;
+    height: 30rem;
+    border-radius: 5rem;
     text-align: left;
-    font-size: 5vh;
-    padding: 2vh;
-    
+    font-size: 9rem;
+    padding: 2rem;
+    left: 0; 
+    top: 0;
+    bottom: 0;
+    right: 0; 
+    margin: auto; 
+    margin-top: 4rem;
 }
 
 #addPage {
@@ -738,7 +743,7 @@ sup.sev3 {
     right: 0; 
     margin: auto; 
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 4rem;
 }
 
 #add-cancel {
@@ -750,7 +755,7 @@ sup.sev3 {
     bottom: 0;
     left: 0;
     width: 50%;
-    height: 3rem;
+    height: 10rem;
     border-right: 0.5vw solid white;
     border-radius: 1rem 0 0 1rem;
 }
@@ -764,11 +769,11 @@ sup.sev3 {
     bottom: 0;
     right: 0;
     width: 50%;
-    height: 3rem;
+    height: 10rem;
     border-left: 0.5vw solid white;
     border-radius: 0 1rem 1rem 0;
 }
 
 #add-icon {
-    width: 3rem;
+    width: 10rem;
 }

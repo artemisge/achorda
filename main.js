@@ -13,6 +13,13 @@ var myProgressions = new Array();
 
 presetProgressions[0] = ["Am", "F", "C", "G", "C"];
 presetProgressions[1] = ["Am", "Fm", "Cm", "Gm", "Cm"];
+presetProgressions[2] = ["Am", "F", "C", "G", "C"];
+presetProgressions[3] = ["Am", "F", "C", "G", "C"];
+presetProgressions[4] = ["Am", "F", "C", "G", "C"];
+presetProgressions[5] = ["Am", "F", "C", "G", "C"];
+presetProgressions[6] = ["Am", "F", "C", "G", "C"];
+presetProgressions[7] = ["Am", "F", "C", "G", "C"];
+presetProgressions[8] = ["Am", "F", "C", "G", "C"];
 
 myProgressions[0] = ["Am", "Fm", "Cm"];
 
@@ -421,8 +428,8 @@ function loadPresetProgressions() {
     document.getElementById("presetprogressions").style.opacity = "1";
     document.getElementById("myprogressions").style.opacity = "0.7";
 
-    document.getElementById("presetprogressions").style.borderRadius = "0 4rem 0 0";
-    document.getElementById("myprogressions").style.borderRadius = "4rem 4rem 0 0";
+    document.getElementById("presetprogressions").style.borderRadius = "0 50rem 0 0";
+    document.getElementById("myprogressions").style.borderRadius = "50rem 50rem 0 0";
     
     let parent = document.getElementById("progList");
     while (parent.firstChild) {
@@ -441,8 +448,8 @@ function loadMyProgressions() {
     document.getElementById("presetprogressions").style.opacity = "0.7";
     document.getElementById("myprogressions").style.opacity = "1";
 
-    document.getElementById("presetprogressions").style.borderRadius = "4rem 4rem 0 0";
-    document.getElementById("myprogressions").style.borderRadius = "4rem 0 0 0";
+    document.getElementById("presetprogressions").style.borderRadius = "50rem 50rem 0 0";
+    document.getElementById("myprogressions").style.borderRadius = "50rem 0 0 0";
 
     let parent = document.getElementById("progList");
     while (parent.firstChild) {

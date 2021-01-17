@@ -30,9 +30,37 @@
                 My<br />Progressions</div>
         </div>
         <div id="addPage">
-            <img src="add-icon.svg" id="add-icon" onclick="addChord()"/> 
+            <div id="addPage-display">
+                <img src="add-icon.svg" id="add-icon" onclick="addChord()"/> 
+            </div>
             <div id="add-cancel" onclick="cancelProg()">Cancel</div>
             <div id="add-save" onclick="saveProg()">Save</div>
+        </div>
+        <div id="addPage-choices">
+            <div id="addPage-choices-top">
+                <img src="question-mark-icon.png" id="questionmark-icon" onclick="addChordQuestion()"/> 
+                <img src="trash-icon.png" id="trash-icon" onclick="addChordTrash()"/> 
+
+
+                <img src="checkmark.png" id="checkmark-icon" onclick="addChordTick()"/> 
+            </div>
+            <div id="addPage-choices-degrees">
+                <div class="romans"> i</div>
+                <div class="romans" id="sharp"> #</div>
+                <div class="romans"> ii</div>
+                <div class="romans" id="sharp"> #</div>
+                <div class="romans"> iii</div>
+                <div class="romans"> iv</div>
+                <div class="romans" id="sharp"> #</div>
+                <div class="romans"> v</div>
+                <div class="romans" id="sharp"> #</div>
+                <div class="romans"> vi</div>
+                <div class="romans" id="sharp"> #</div>
+                <div class="romans"> vii</div>
+            </div>
+            <div id="addPage-choices-chords">
+
+            </div>
         </div>
     </div>
     </div>        
